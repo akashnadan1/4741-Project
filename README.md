@@ -1,4 +1,4 @@
-# Class project for ORIE 4741 at Cornell University
+# Class project for ORIE 4741, Learning With Big Messy Data, at Cornell University
 
 < name of the project > 
 
