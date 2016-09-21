@@ -11,5 +11,5 @@ Our goal is analyze NBA player data and identify the best situations for taking 
 
     -Whether or not a player will make their shot based on their current situation (distance from the hoop, game period, distance from defender, etc.)
     
-    -What are the optimal characteristics for taking a shot
+    -What are the optimal characteristics for making a shot
 
