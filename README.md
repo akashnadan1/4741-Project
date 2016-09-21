@@ -1,6 +1,6 @@
 # Class project for ORIE 4741, Learning With Big Messy Data, at Cornell University
 
-< name of the project > 
+Analysis of NBA Data: Predicting shots 
 
 Andrew Kozma, adk87@cornell.edu
 
