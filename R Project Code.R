@@ -146,3 +146,38 @@ names(madeShots)
 plot(madeShots$FGM, madeShots$SHOT_DIST)
 mean(madeShots$SHOT_DIST)
 #11.68 feet
+
+#bining the shots based on distance from he hoop
+min(data$SHOT_DIST)
+max(data$SHOT_DIST)
+summary(data)
+
+bin1 = data[which(data$SHOT_DIST >= 0.0 & data$SHOT_DIST <= 5.0), ]
+bin1$FGM = as.numeric(bin1$FGM)
+m1 = mean(bin1$FGM) - 1
+bin2 = data[which(data$SHOT_DIST > 5.0 & data$SHOT_DIST <= 10.0), ]
+bin2$FGM = as.numeric(bin2$FGM)
+m2 = mean(bin2$FGM) - 1
+bin3 = data[which(data$SHOT_DIST > 10.0 & data$SHOT_DIST <= 15.0), ]
+bin3$FGM = as.numeric(bin3$FGM)
+m3 = mean(bin3$FGM) - 1
+bin4 = data[which(data$SHOT_DIST > 15.0 & data$SHOT_DIST <= 20.0), ]
+bin4$FGM = as.numeric(bin4$FGM)
+m4 = mean(bin4$FGM) - 1
+bin5 = data[which(data$SHOT_DIST > 20.0 & data$SHOT_DIST <= 25.0), ]
+bin5$FGM = as.numeric(bin5$FGM)
+m5 = mean(bin5$FGM) - 1
+bin6 = data[which(data$SHOT_DIST > 25.0 & data$SHOT_DIST <= 30.0), ]
+bin6$FGM = as.numeric(bin6$FGM)
+m6 = mean(bin6$FGM) - 1
+bin7 = data[which(data$SHOT_DIST > 30.0 & data$SHOT_DIST <= 35.0), ]
+bin7$FGM = as.numeric(bin7$FGM)
+m7 = mean(bin7$FGM) - 1
+
+#accuracy at different bins
+extra = data.frame(bins, distances)
+bins = c(m1, m2, m3, m4, m5, m6, m7)
+distances = c("0-5", "5-10", "10-15", "15-20", "20-25", "25-30", "30-35")
+library(ggvis)
+layer_paths(ggvis(extra, x = ~distances, y = ~bins)) %>% add_axis("x", title = "Distance from hoop (feet)") %>% add_axis("y", title = "Shot Accuracy")
+
